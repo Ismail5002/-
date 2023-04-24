@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import cl from "../style/Profile.module.css";
+
 import { putPosts } from "../Store/posts/postsReducer";
 
 const PutPosts = ({ id }) => {
@@ -8,9 +8,9 @@ const PutPosts = ({ id }) => {
 
   const [values, setValues] = React.useState({
     title: "",
-    price: 0,
     description: "",
     images: "",
+    price: 0,
     categoryId: 1,
     id: id,
   });
@@ -24,21 +24,22 @@ const PutPosts = ({ id }) => {
     setValues({
       ...values,
       title: "",
-      price: "",
       description: "",
       images: "",
+      price: 0,
+      categoryId: 1,
     });
   };
 
   return (
-    <section className={cl.profile}>
-      <form className={cl.form}>
-        <div className={cl.group}>
+    <section className="">
+      <form className="">
+        <div className="">
           <input
             type="text"
             name="title"
-            placeholder="Title"
-            value={values.email}
+            placeholder="title"
+            value={values.title}
             autoComplete="off"
             onChange={(e) => {
               handleChange(e);
@@ -46,25 +47,12 @@ const PutPosts = ({ id }) => {
             required
           />
         </div>
-        <div className={cl.group}>
-          <input
-            type="number"
-            name="price"
-            placeholder="price"
-            value={values.name}
-            autoComplete="off"
-            onChange={(e) => {
-              handleChange(e);
-            }}
-            required
-          />
-        </div>
-        <div className={cl.group}>
+        <div className="">
           <input
             type="text"
             name="description"
-            placeholder="Description"
-            value={values.password}
+            placeholder="description"
+            value={values.description}
             autoComplete="off"
             onChange={(e) => {
               handleChange(e);
@@ -72,11 +60,11 @@ const PutPosts = ({ id }) => {
             required
           />
         </div>
-        <div className={cl.group}>
+        <div className="">
           <input
             type="text"
             name="images"
-            placeholder="ImageURL"
+            placeholder="images"
             value={values.images}
             autoComplete="off"
             onChange={(e) => {
@@ -85,8 +73,20 @@ const PutPosts = ({ id }) => {
             required
           />
         </div>
-
-        <button onClick={handleSubmit} className={cl.submit}>
+        <div className="">
+          <input
+            type="text"
+            name="price"
+            placeholder="price"
+            value={values.price}
+            autoComplete="off"
+            onChange={(e) => {
+              handleChange(e);
+            }}
+            required
+          />
+        </div>
+        <button onClick={handleSubmit} className="">
           Update
         </button>
       </form>

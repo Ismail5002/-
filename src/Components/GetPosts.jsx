@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 
 const GetPosts = ({ posts }) => {
   const dispatch = useDispatch();
-
+  console.log(posts);
   const getPost = () => {
     dispatch(getPosts());
   };
   const deletePost = (id) => {
+    console.log(id);
     dispatch(deletePosts(id));
   };
   return (
@@ -17,15 +18,14 @@ const GetPosts = ({ posts }) => {
       <button className="ownbtn" onClick={getPost}>
         GET
       </button>
-      <div className="posts">
+      <div className="">
         {posts.map((p) => {
           return (
             <div key={p.id}>
-              <div>Name: {p.title}</div>
-              <div>{p.price}$</div>
-              <div>description: {p.description}</div>
+              <div>{p.title}</div>
               <Link to={`/GET/products/${p.id}`}>
-                <img src={p.images[0]} />
+                {p.id}
+                <img src={p.images[0]} alt={p.title} />
               </Link>
               <div>
                 <button

@@ -9,7 +9,7 @@ const SinglePosts = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getSinglePage(id));
-  }, []);
+  }, [dispatch, id]);
 
   return <PutPosts id={id} />;
 };

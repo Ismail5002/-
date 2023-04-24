@@ -1,19 +1,16 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./Components/Navbar";
 import AppRoutes from "./Components/AppRoutes";
-
+import "./style/index.css";
 const App = () => {
-  const dispatch = useDispatch();
-
   return (
-    <div>
+    <div className="">
       <Navbar />
-      <div className="GET">
-        <div className="btn"></div>
+      <div className="">
+        <div className=""></div>
       </div>
       <AppRoutes />
-      <div className="PUT"></div>
+      <div className=""></div>
     </div>
   );
 };
